@@ -1,0 +1,53 @@
+# 🌐 Dashboard Analisis Operasional & Gangguan Broadband (Ciamis, Kawali, Manonjaya)
+
+Proyek portofolio *Data Analyst* ini berfokus pada analisis operasional telekomunikasi *fixed broadband* untuk wilayah **Ciamis, Kawali, dan Manonjaya (Jawa Barat)**. Dashboard ini dirancang secara *self-contained* (dilengkapi generator data simulasi berbasis parameter operasional nyata) untuk memonitor metrik utama seperti SLA, MTTR, analisis akar penyebab, hingga deteksi dini gangguan massal.
+
+---
+
+## 📊 Fitur Utama Dashboard (Dibangun dengan Streamlit)
+Dashboard interaktif ini dibagi menjadi 4 tab utama:
+1. **Ringkasan KPI & Tren**: Menampilkan metrik eksekutif (Total Tiket, MTTR Rata-rata & Median, % SLA Terpenuhi, Tiket Berulang, dan CSAT) serta tren harian berdasarkan kondisi cuaca.
+2. **Akar Penyebab & SLA**: Analisis Pareto (prinsip 80/20) untuk akar penyebab gangguan serta pemetaan area dan kategori dengan pelanggaran SLA tertinggi.
+3. **ODP Rawan & Gangguan Massal**: Identifikasi titik distribusi (*Optical Distribution Point* / ODP) yang memerlukan pemeliharaan preventif dan deteksi anomali gangguan massal.
+4. **7 Pertanyaan Bisnis & SQL Insight**: Menjawab pertanyaan operasional strategis menggunakan kueri SQL terintegrasi dan uji signifikansi statistik (*t-test* cuaca hujan vs cerah).
+7 Pertanyaan Bisnis yang Dijawab dalam Proyek Ini
+1.Apakah lonjakan tiket berkaitan dengan hujan, dan seberapa besar efeknya? (Dibuktikan dengan t-test statistik)
+
+2.Area dan kategori mana yang paling sering melanggar SLA?
+
+3.Penyebab apa yang menyumbang paling banyak gangguan (Pareto Analysis)?
+
+4.ODP mana yang harus diprioritaskan untuk pemeliharaan preventif?
+
+5.Bagaimana mendeteksi gangguan massal lebih dini?
+
+6.Apa yang mendorong kepuasan pelanggan (CSAT) turun?
+
+7.Kapan beban operasional tertinggi, dan bagaimana mengatur shift teknisi?
+
+---
+
+## 🛠️ Tech Stack & Libraries
+* **Python**: Bahasa pemrograman utama.
+* **Pandas & NumPy**: Manipulasi data, pembersihan, dan perhitungan metrik operasional.
+* **SciPy**: Uji statistik signifikansi (*Independent t-test*).
+* **Streamlit**: Membangun antarmuka web dashboard interaktif.
+* **Plotly**: Visualisasi data dinamis dan responsif.
+* **SQLite**: Simulasi pengelolaan basis data relasional untuk kueri SQL.
+
+---
+
+## 📁 Struktur Data & Kolom Utama
+Dataset simulasi mencakup variabel-variabel operasional penting:
+* **Waktu & Lokasi**: `Waktu_Lapor`, `Area` (Ciamis, Kawali, Manonjaya), `ID_ODP`, `ID_Pelanggan`.
+* **Karakteristik Gangguan**: `Kategori_Gangguan`, `Penyebab`, `Channel_Lapor`, `Cuaca` (Hujan/Cerah), `Gangguan_Massal`.
+* **Metrik Performa**: `Respon_Menit`, `Durasi_Perbaikan_Jam`, `Total_Penanganan_Jam` (MTTR), `Target_SLA_Jam`, `Status_SLA`.
+* **Kepuasan & Retensi**: `Tiket_Berulang_30Hari`, `Estimasi_Biaya_Rp`, `CSAT` (1–5).
+
+---
+
+## 🚀 Cara Menjalankan Proyek Secara Lokal
+
+1. **Clone repository ini:**
+   ```bash
+   git clone [https://github.com/daffaaafz/ANALYST-BROADBAND]
