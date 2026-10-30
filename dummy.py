@@ -211,7 +211,7 @@ tab1, tab2, tab3, tab4 = st.tabs([
     "📊 Ringkasan KPI & Tren", 
     "⚙️ Akar Penyebab & SLA", 
     "🏢 ODP Rawan & Massal", 
-    "💡 7 Pertanyaan Bisnis & SQL Insight"
+    "💡INSIGHT"
 ])
 
 with tab1:
@@ -296,7 +296,7 @@ with tab3:
     st.dataframe(df_massal_deteksi, use_container_width=True)
 
 with tab4:
-    st.header("💡 Jawaban 7 Pertanyaan Bisnis & Insight Data Dinamis")
+    st.header("💡Insight Data")
     st.markdown("Analisis komprehensif ini dihitung secara langsung dari data terfilter:")
 
     # 1. Hujan vs Cerah
