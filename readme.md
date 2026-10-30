@@ -6,6 +6,7 @@
 [![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![Plotly](https://img.shields.io/badge/Plotly-Interactive-33F?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com/)
 [![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+
 ---
 
 ## 📌 1. Latar Belakang Proyek (Business Context)
@@ -56,7 +57,7 @@ Aplikasi interaktif ini dibagi menjadi empat modul analisis utama:
 
 ## 🚀 5. (Quick Start)
 
-Ingin mencoba dashboard ini secara langsung di komputermu? Ikuti langkah mudah berikut:
+Ingin mencoba dashboard ini secara langsung ?
 
 1. **Clone repository ini:**
    ```bash
