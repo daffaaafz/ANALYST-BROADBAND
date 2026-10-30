@@ -1,0 +1,63 @@
+# 🌐 Dashboard Analisis Operasional & Gangguan Jaringan Fixed Broadband
+> **Analisis Performa Operasional, SLA, Akar Penyebab Gangguan, & Optimalisasi Layanan Telekomunikasi (Ciamis, Kawali, Manonjaya)**
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Plotly](https://img.shields.io/badge/Plotly-Interactive-33F?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+---
+
+## 📌 1. Latar Belakang Proyek (Business Context)
+Proyek portofolio ini mensimulasikan sistem pemantauan dan analisis operasional jaringan *fixed broadband* untuk wilayah **Ciamis, Kawali, dan Manonjaya**. Dalam industri telekomunikasi, menjaga ketersediaan jaringan, memenuhi target **SLA (Service Level Agreement)**, menekan angka **MTTR (Mean Time to Repair)**, dan menjaga kepuasan pelanggan (**CSAT**) adalah kunci utama untuk meminimalkan *churn rate* pelanggan.
+
+Dashboard ini dibangun secara *self-contained* dengan *in-memory data generator* yang mereplikasi pola gangguan nyata (faktor cuaca hujan vs cerah, jam sibuk trafik, lonjakan wilayah, hingga gangguan massal).
+
+---
+
+## 🎯 2. Menjawab 7 Pertanyaan Bisnis Strategis
+Dashboard ini dirancang untuk menjawab 7 pertanyaan operasional penting yang biasa diajukan oleh manajemen atau *Head of Network Operations*:
+
+1. **Pengaruh Cuaca:** Apakah lonjakan tiket berkaitan dengan hujan? *(Dibuktikan secara statistik menggunakan uji Independent t-test).*
+2. **Titik Lemah SLA:** Area dan kategori gangguan mana yang paling sering melanggar batas SLA?
+3. **Analisis Pareto (80/20):** Akar penyebab mana yang menyumbang mayoritas volume gangguan?
+4. **Pemeliharaan Preventif:** Titik ODP (*Optical Distribution Point*) mana yang harus diprioritaskan untuk peremajaan karena memiliki tiket berulang tertinggi?
+5. **Deteksi Dini:** Bagaimana mendeteksi anomali gangguan massal sebelum diklasifikasikan secara resmi?
+6. **Kepuasan Pelanggan:** Faktor operasional apa (MTTR, pelanggaran SLA, tiket berulang) yang paling mendorong penurunan skor CSAT?
+7. **Kapan Beban Tertinggi?:** Kapan puncak jam sibuk terjadi agar penjadwalan *shift* teknisi lapangan dapat dioptimalkan?
+
+---
+
+## 📊 3. Fitur Utama & Struktur Dashboard (4 Tabs)
+Aplikasi interaktif ini dibagi menjadi empat modul analisis utama:
+* **Tab 1: Ringkasan KPI & Tren**
+  * *Executive KPI Summary*: Total Tiket, MTTR (Rata-rata vs Median tahan *outlier*), % SLA Terpenuhi, Tingkat Tiket Berulang, dan CSAT Rata-rata.
+  * *Tren Harian*: Visualisasi perbandingan volume tiket harian antara kondisi cuaca Cerah dan Hujan.
+* **Tab 2: Akar Penyebab & SLA**
+  * *Pareto Chart*: Menampilkan distribusi akar penyebab masalah infrastruktur luar.
+  * *Analisis Pelanggaran SLA*: Pemetaan area dan kategori gangguan dengan persentase kegagalan tertinggi.
+* **Tab 3: ODP Rawan & Gangguan Massal**
+  * *Tabel Prioritas ODP*: Filter berbasis *window function* untuk mendeteksi ODP dengan riwayat tiket berulang terbanyak.
+  * *Deteksi Dini Anomali*: Menyaring lonjakan tiket mendadak dari satu ODP yang sama dalam rentang jam tertentu.
+* **Tab 4: 7 Pertanyaan Bisnis & SQL Insight**
+  * Penjabaran temuan analitis mendalam lengkap dengan kueri SQL relasional (`GROUP BY`, `JOIN`, *Aggregations*) dan uji signifikansi statistik.
+
+---
+
+## 🛠️ 4. Tech Stack & Libraries
+* **Bahasa Pemrograman**: Python 3.10+
+* **Manipulasi & Analisis Data**: Pandas, NumPy
+* **Analisis Statistik**: SciPy (`scipy.stats.ttest_ind`)
+* **Manajemen Database Relasional**: SQLite (untuk latihan kueri SQL interaktif di dalam app)
+* **Antarmuka Web Dashboard**: Streamlit
+* **Visualisasi Data Interaktif**: Plotly Express
+
+---
+
+## 🚀 5. (Quick Start)
+
+Ingin mencoba dashboard ini secara langsung di komputermu? Ikuti langkah mudah berikut:
+
+1. **Clone repository ini:**
+   ```bash
+   git clone [https://github.com/daffaaafz/ANALYST-BROADBAND]
